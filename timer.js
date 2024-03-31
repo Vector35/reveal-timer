@@ -37,14 +37,14 @@ const Timer = () => {
       <input type="text" id="customTime" style="display:none;" placeholder="e.g., 1m 10s" />
       <button onclick="startTimer()">Start Timer</button>
       <button onclick="stopResetTimer()">Stop/Reset</button>
-      <div id="timer">00:00</div>
+      <div id="timerClock">00:00</div>
     `;
     container.innerHTML = selectHTML;
 
     document.body.appendChild(timerOverlay);
 
     customTimeInput = document.getElementById('customTime');
-    timerDisplay = document.getElementById('timer');
+    timerDisplay = document.getElementById('timerClock');
 
     document.getElementById('timeSelect').addEventListener('change', function() {
       const value = this.value

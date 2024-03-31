@@ -97,7 +97,7 @@ const Timer = () => {
     const slide = event.currentSlide;
     const duration = slide.getAttribute('data-timer');
     if (duration) {
-      startTimer(duration * 60); // Assuming duration is in minutes for simplicity
+      startTimer(parseCustomTime(duration));
     } else {
       stopResetTimer();
     }

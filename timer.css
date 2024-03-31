@@ -19,6 +19,7 @@
 }
 #timer {
     font-size: 178px;
+    font-family: sans-serif;
     margin: 20px 0;
 }
 #timerOverlay select, #timerOverlay input, #timerOverlay button {

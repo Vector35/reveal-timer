@@ -65,7 +65,7 @@ const Timer = () => {
     interval = setInterval(() => {
       if(time <= 0) {
         clearInterval(interval);
-        timerDisplay.textContent = "TIME'S UP!";
+        timerDisplay.textContent = "DONE!";
         return;
       }
       time--;
@@ -87,9 +87,21 @@ const Timer = () => {
   };
 
   const parseCustomTime = (input) => {
-    const parts = input.split(/[ms\s]+/);
-    let minutes = parseInt(parts[0], 10) || 0;
-    let seconds = parseInt(parts[1], 10) || 0;
+    let minutes = 0;
+    let seconds = 0;
+
+    // Check for a minutes specifier
+    const minuteMatch = input.match(/(\d+)m/);
+    if (minuteMatch) {
+      minutes = parseInt(minuteMatch[1], 10);
+    }
+
+    // Check for a seconds specifier
+    const secondMatch = input.match(/(\d+)s/);
+    if (secondMatch) {
+      seconds = parseInt(secondMatch[1], 10);
+    }
+
     return minutes * 60 + seconds;
   };
 

@@ -107,6 +107,10 @@ const Timer = () => {
 
   const checkSlideForTimer = (event) => {
     const slide = event.currentSlide;
+    if (!slide) {
+      console.error("Current slide is undefined");
+    return;
+    }
     const duration = slide.getAttribute('data-timer');
     if (duration) {
       startTimer(parseCustomTime(duration));
